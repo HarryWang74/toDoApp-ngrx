@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot({}),
   ],
-  providers: [],
+  providers: [{ provide: DefaultDataServiceConfig, useValue: DefaultDataServiceConfig }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
