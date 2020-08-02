@@ -1,0 +1,15 @@
+<div class="TStoDoDetail">
+  <div class="row" *ngIf="selectedToDo">
+      <div class="col-md-12">
+          <div class="form-group toDoSubject">
+              <input type="text"
+                     class="clickable"
+                     [(ngModel)]="selectedToDo.subject" />
+          </div>
+      </div>
+      <div>
+        <button mat-flat-button color="primary" (click)=saveToDo() style="margin-right: 10px;">Save</button>
+        <button mat-flat-button (click)=deleteToDo()>Delete</button>
+      </div>
+  </div>
+</div>

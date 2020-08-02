@@ -6,6 +6,7 @@ import { EntityMetadataMap, EntityDefinitionService, EntityDataService, DefaultD
 import { ToDoEntityService } from './services/todo-entity.service'
 import { ToDoDataService } from './services/todo-data.service'
 import {ToDoCreateComponent} from '../todo/components/to-do-create/to-do-create.component';
+import {ToDoDetailComponent} from '../todo/components/to-do-detail/to-do-detail.component';
 
 export const todoRoutes: Routes = [
     {
@@ -26,8 +27,8 @@ const entityMetadata: EntityMetadataMap = {
         CommonModule,
         RouterModule.forChild(todoRoutes)
     ],
-    declarations: [TodoListComponent, ToDoCreateComponent],
-    exports: [TodoListComponent, ToDoCreateComponent],
+    declarations: [TodoListComponent, ToDoCreateComponent, ToDoDetailComponent],
+    exports: [TodoListComponent, ToDoCreateComponent, ToDoDetailComponent],
     providers: [
         ToDoEntityService,
         ToDoDataService,

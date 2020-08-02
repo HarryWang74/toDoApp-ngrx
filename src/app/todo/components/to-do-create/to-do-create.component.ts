@@ -26,6 +26,7 @@ export class ToDoCreateComponent implements OnInit {
 
 
   savingToDo(input) {
+    this.creating = true;
     let newTodo:ToDo = {
       id:0,
       subject: input.value

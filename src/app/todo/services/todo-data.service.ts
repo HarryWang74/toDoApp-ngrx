@@ -25,6 +25,4 @@ export class ToDoDataService extends DefaultDataService<ToDo> {
     add(toDo:ToDo): Observable<ToDo>{
         return this.http.post<ToDo>('http://localhost:3000/todos/', toDo, this.httpOptions).pipe(delay(2000));
     }
-
-
 }

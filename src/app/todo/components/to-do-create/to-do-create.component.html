@@ -11,4 +11,7 @@
           <input id="newToDoSubject" (keyup.enter)="savingToDo(input)" #input>
       </div>
   </ng-container>
+  <ng-container *ngIf="creating">
+    <h3>Creating todo ... </h3>
+  </ng-container>
 </div>
