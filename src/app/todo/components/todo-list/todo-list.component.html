@@ -1,9 +1,14 @@
 <h1>Todo list</h1>
-<ul>
-    <ng-container *ngIf="loading$ | async">
-        <h3>Loading ... </h3>
-    </ng-container>
-    <li *ngFor="let todo of todos$ | async">
-        {{todo.subject}}
-    </li>
-</ul>
+<ng-container *ngIf="loading$ | async">
+    <h3>Loading ... </h3>
+</ng-container>
+<div class="TStoDoList">
+    <div *ngFor="let todo of todos$ | async"
+        (click)="editTodo(toDo)"
+        class="toDoWrapper clickAble">
+        <span class="toDoIndicator"></span>
+        <div class="subject">
+            {{todo.subject}}
+        </div>
+    </div>
+</div>
