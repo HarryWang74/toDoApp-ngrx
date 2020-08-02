@@ -1,1 +1,6 @@
 <h1>Todo list</h1>
+<ul>
+    <li *ngFor="let todo of todos$ | async">
+        {{todo.subject}}
+    </li>
+</ul>
