@@ -1,0 +1,14 @@
+<div class="TScreateToDo">
+  <ng-container *ngIf="!create">
+      <div class="createBtnWrapper clickAble"
+           (click)="startCreateToDo()">
+          + ToDo
+      </div>
+  </ng-container>
+  <ng-container *ngIf="create">
+      <div class="toDoWrapper">
+          <span class="toDoIndicator"></span>
+          <input id="newToDoSubject" (keyup.enter)="savingToDo(input)" #input>
+      </div>
+  </ng-container>
+</div>

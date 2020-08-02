@@ -1,5 +1,8 @@
 <h1>Todo list</h1>
-<ng-container *ngIf="loading$ | async">
+<div class="TStoDoList">
+    <to-do-create></to-do-create>
+</div>
+<ng-container *ngIf="loading">
     <h3>Loading ... </h3>
 </ng-container>
 <div class="TStoDoList">

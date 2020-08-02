@@ -9,7 +9,7 @@ import {concatMap, delay, filter, first, map, shareReplay, tap, withLatestFrom} 
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit{
-  loading$: Observable<boolean>;
+  loading: boolean;
   todos$: Observable<ToDo[]>;
 
   constructor(
@@ -17,8 +17,15 @@ export class TodoListComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.todoService.getAll();
     this.todos$ = this.todoService.entities$
-    this.loading$ = this.todoService.loading$.pipe(delay(0));
+    this.loadData();
+  }
+
+  loadData(){
+    this.loading = true; 
+    this.todoService.getAll().subscribe(
+      result => {this.loading = false},
+      error => {console.log("load fail")}
+    );
   }
 }
