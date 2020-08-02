@@ -1,5 +1,8 @@
 <h1>Todo list</h1>
 <ul>
+    <ng-container *ngIf="loading$ | async">
+        <h3>Loading ... </h3>
+    </ng-container>
     <li *ngFor="let todo of todos$ | async">
         {{todo.subject}}
     </li>

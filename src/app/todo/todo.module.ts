@@ -4,16 +4,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {TodoListComponent} from './components/todo-list/todo-list.component'
 import { EntityMetadataMap, EntityDefinitionService, EntityDataService, DefaultDataServiceConfig } from '@ngrx/data';
 import { ToDoEntityService } from './services/todo-entity.service'
-import { ToDoResolver } from './services/todo.resolver'
 import { ToDoDataService } from './services/todo-data.service'
 
 export const todoRoutes: Routes = [
     {
         path: '',
-        component: TodoListComponent,
-        resolve: {
-            toDos: ToDoResolver
-        }
+        component: TodoListComponent
     }
 ];
 
@@ -33,7 +29,6 @@ const entityMetadata: EntityMetadataMap = {
     exports: [TodoListComponent],
     providers: [
         ToDoEntityService,
-        ToDoResolver,
         ToDoDataService,
     ]
 })
